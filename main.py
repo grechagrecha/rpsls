@@ -12,19 +12,12 @@ Choose your fighter:
 
 """
 
-
 from random import randint
-from utils import name_to_number, number_to_name
+from utils import name_to_number, number_to_name, CircularDoublyLinkedList
 
 
 def main():
-    print('Хелло! Поиграем в камень, ножницы, бумага, ящерица, спок?')
-    print('Выбери бойца!')
-    player_choise = str(input(''))
-    print('\n')
-
-    print(f'Хм. Штош, твой выбор - {player_choise.lower()}.\n')
-    player_number = name_to_number(player_choise.lower())
+    pass
 
 
 if __name__ == '__main__':

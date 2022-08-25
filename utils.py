@@ -1,4 +1,3 @@
-
 def name_to_number(name):
     match name:
         case 'камень':
@@ -31,19 +30,59 @@ def number_to_name(number):
             return -1
 
 
-# Узел списка
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
         self.prev = None
 
+    def __str__(self):
+        return self.data
 
-# Двусвязный циклический список
+
 class CircularDoublyLinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
+
+    def __len__(self):
+        n = 1
+
+        cur = self.head
+
+        while cur.next is not self.head:
+            n += 1
+            cur = cur.next
+
+        return n
+
+    def __str__(self):
+        cur = self.head
+        lst = ''
+
+        while cur:
+            lst += str(cur.data)
+            lst += ', '
+            cur = cur.next
+
+            if cur.next == self.head:
+                lst += str(self.tail.data)
+                break
+
+        return lst
+
+    def __getitem__(self, item):
+        i = 0
+        cur = self.head
+
+        if item < len(self):
+            while item is not i:
+                cur = cur.next
+                i += 1
+        else:
+            raise IndexError
+
+        return cur
 
     def append(self, data):
         if not self.head:
@@ -78,16 +117,16 @@ class CircularDoublyLinkedList:
             cur.next = new_node
         self.head = new_node
 
-    def print_list(self):
-        cur = self.head
 
-        while cur:
-            print(cur.data)
-            cur = cur.next
+cdll = CircularDoublyLinkedList()
 
-            if cur.next == self.head:
-                print(self.tail.data)
-                break
+cdll.append('1')
+cdll.append('2')
+cdll.append('3')
+cdll.append('4')
+cdll.append('5')
 
-
-cddl = CircularDoublyLinkedList()
+print(cdll[4])
+print(len(cdll))
+print(cdll)
+pass
