@@ -75,13 +75,27 @@ class CircularDoublyLinkedList:
         i = 0
         cur = self.head
 
-        if item < len(self):
+        if 0 < item < len(self) and isinstance(item, int):
             while item is not i:
                 cur = cur.next
                 i += 1
         else:
             raise IndexError
 
+        return cur
+
+    def __setitem__(self, key, value):
+        i = 0
+        cur = self.head
+
+        if 0 < key < len(self) and isinstance(key, int):
+            while key is not i:
+                cur = cur.next
+                i += 1
+        else:
+            raise IndexError
+
+        cur.data = str(value)
         return cur
 
     def append(self, data):
@@ -127,6 +141,8 @@ cdll.append('4')
 cdll.append('5')
 
 print(cdll[4])
-print(len(cdll))
+cdll[4] = 15
+print(cdll[4])
+print(f'Length: {len(cdll)}')
 print(cdll)
 pass
