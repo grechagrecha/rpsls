@@ -21,26 +21,6 @@ def name_to_number(name: str):
             return -1
 
 
-def number_to_name(number):
-    match number:
-        case 0:
-            return 'камень'
-        case 1:
-            return 'спок'
-        case 2:
-            return 'бумага'
-        case 3:
-            return 'ящерица'
-        case 4:
-            return 'ножницы'
-        case _:
-            return -1
-
-
-def do_magic(choise):
-    return int(list(CHOISES.keys())[list(CHOISES.values()).index(choise)])
-
-
 class TermColors:
     RED = '\033[91m'
     BLUE = '\033[94m'

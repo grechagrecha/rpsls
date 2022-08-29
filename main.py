@@ -14,7 +14,7 @@ Choose your fighter:
 
 
 from random import randint
-from utils import CircularDoublyLinkedList, TermColors, CHOISES, do_magic, name_to_number
+from utils import CircularDoublyLinkedList, TermColors, CHOISES, name_to_number
 
 
 def main():
