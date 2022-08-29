@@ -1,4 +1,11 @@
-def name_to_number(name):
+CHOISES = {0: 'камень',
+           1: 'спок',
+           2: 'бумага',
+           3: 'ящерица',
+           4: 'ножницы'}
+
+
+def name_to_number(name: str):
     match name:
         case 'камень':
             return 0
@@ -28,6 +35,17 @@ def number_to_name(number):
             return 'ножницы'
         case _:
             return -1
+
+
+def do_magic(choise):
+    return int(list(CHOISES.keys())[list(CHOISES.values()).index(choise)])
+
+
+class TermColors:
+    RED = '\033[91m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
 
 
 class Node:
@@ -75,7 +93,7 @@ class CircularDoublyLinkedList:
         i = 0
         cur = self.head
 
-        if 0 < item < len(self) and isinstance(item, int):
+        if 0 <= item < len(self) and isinstance(item, int):
             while item is not i:
                 cur = cur.next
                 i += 1
@@ -132,17 +150,3 @@ class CircularDoublyLinkedList:
         self.head = new_node
 
 
-cdll = CircularDoublyLinkedList()
-
-cdll.append('1')
-cdll.append('2')
-cdll.append('3')
-cdll.append('4')
-cdll.append('5')
-
-print(cdll[4])
-cdll[4] = 15
-print(cdll[4])
-print(f'Length: {len(cdll)}')
-print(cdll)
-pass
