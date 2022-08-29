@@ -12,13 +12,11 @@ Choose your fighter:
 
 """
 
-
 from random import randint
 from utils import CircularDoublyLinkedList, TermColors, CHOISES, name_to_number
 
 
 def main():
-
     cdll = CircularDoublyLinkedList()
 
     for elem in CHOISES:

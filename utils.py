@@ -128,5 +128,3 @@ class CircularDoublyLinkedList:
                 cur = cur.next
             cur.next = new_node
         self.head = new_node
-
-
